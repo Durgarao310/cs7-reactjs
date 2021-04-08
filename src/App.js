@@ -1,12 +1,11 @@
-
 import React from "react";
+import "bulma";
 import { BrowserRouter as Router, Switch, Route, Link, params } from "react-router-dom";
 import Register from "./components/authentication/Register"
 import Login from "./components/authentication/Login"
 import ForgotPassword from "./components/authentication/ForgotPassword"
 import ResetPassword from "./components/authentication/ResetPassword"
 import GetRooms from "./components/rooms/GetRooms"
-import "bulma";
 
 
 

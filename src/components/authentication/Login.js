@@ -4,7 +4,7 @@ import Loading from "./../loading"
 import { Link } from "react-router-dom";
 
 
-export default function Register(){
+export default function Login(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
@@ -40,12 +40,16 @@ export default function Register(){
     return (
         <div>
             {loading ? <Loading/> :
-                <section className="hero is-primary is-fullheight">
+            <div>
+                <div className="hero is-primary is-fullheight">
                     <div className="hero-body">
                       <div className="container">
                         <div className="columns is-centered">
                           <div className="column is-5-tablet is-4-desktop is-3-widescreen">
-                            <form action="" className="box">
+                                <div class={error ? "notification is-warning" : ""}>
+                                {error}
+                                </div>
+                            <form onSubmit={loginHandler} className="box">
                               <div className="field">
                                 <label htmlFor="" className="label">Email</label>
                                 <div className="control has-icons-left">
@@ -56,7 +60,6 @@ export default function Register(){
                                 </div>
                               </div>
                               <div className="field">
-                                  
                                 <label htmlFor="" className="label">Password</label>
                                 <div className="control has-icons-left">
                                   <input type="password" onChange={passwordHandler} placeholder="*******" value={password} className="input" required />
@@ -67,7 +70,8 @@ export default function Register(){
                               </div>
                               <p className="has-text-link"><Link to="/forgotpassword">Forgotpassword</Link></p>
                               <div className="field">
-                                <input type="button" value="Login" className="button is-success" />
+                                <input type="submit" value="submit" className="button is-success" />
+                                
                               </div>
                                 <p>Don't have an account? <Link className="has-text-link" to="/register">Register</Link></p>
                             </form>
@@ -75,7 +79,8 @@ export default function Register(){
                         </div>
                       </div>
                     </div>
-                </section>
+                </div>
+            </div>
             }
         </div>
     )

@@ -35,16 +35,19 @@ export default function ForgotPassword(){
             {loading ? <Loading /> :
                     <div>
                         {error}
-                        <section className="hero is-primary is-fullheight">
+                  <section className="hero is-primary is-fullheight">
                     <div className="hero-body">
                       <div className="container">
                         <div className="columns is-centered">
                           <div className="column is-5-tablet is-4-desktop is-3-widescreen">
-                            <form action="" onSubmit={fotgotPasswordHandler} className="box">
+                                <div class={error ? "notification is-warning" : ""}>
+                                {error}
+                                </div>
+                            <form onSubmit={fotgotPasswordHandler} className="box">
                               <div className="field">
                                 <label htmlFor="" className="label">Email</label>
                                 <div className="control has-icons-left">
-                                  <input type="password" onChange={emailHandler} placeholder="email@gmail.com" value={email} className="input" required />
+                                  <input type="text" onChange={emailHandler} placeholder="email@gmail.com" value={email} className="input" required />
                                   <span className="icon is-small is-left">
                                     <i className="fa fa-lock"></i>
                                   </span>
@@ -59,7 +62,7 @@ export default function ForgotPassword(){
                       </div>
                     </div>
                 </section>
-                </div>
+              </div>
             }
         </div>
     )

@@ -55,7 +55,10 @@ export default function Register(){
                       <div className="container">
                         <div className="columns is-centered">
                           <div className="column is-5-tablet is-4-desktop is-3-widescreen">
-                            <form action="" onSubmit={registerHandler} className="box">
+                               <div class={error ? "notification is-warning" : ""}>
+                                {error}
+                                </div>
+                            <form onSubmit={registerHandler} className="box">
                             <div className="field">
                                 <label htmlFor="" className="label">Name</label>
                                 <div className="control has-icons-left">
@@ -85,9 +88,9 @@ export default function Register(){
                               </div>
 
                               <div className="field">
-                                <input type="button" value="Register" className="button is-success" />
+                                <input type="submit" value="submit" className="button is-success" />
                               </div>
-                              <p>Do you have an account? <Link className="has-text-link" to="/login">Login</Link></p>
+                              <p>already account? <Link className="has-text-link" to="/login">Login</Link></p>
                             </form>
                           </div>
                         </div>

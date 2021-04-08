@@ -38,7 +38,33 @@ export default function ResetPassword({history,match}){
         <div>
             {loading ? <Loading /> :
                     <div>
-                        {error}
+                        <section className="hero is-primary is-fullheight">
+                    <div className="hero-body">
+                      <div className="container">
+                        <div className="columns is-centered">
+                          <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+                                <div class={error ? "notification is-warning" : ""}>
+                                {error}{success}
+                                </div>
+                            <form onSubmit={resetPasswordHandler} className="box">
+                              <div className="field">
+                                <label htmlFor="" className="label">Password</label>
+                                <div className="control has-icons-left">
+                                  <input type="password" onChange={passwordHandler} placeholder="********" value={password} className="input" required />
+                                  <span className="icon is-small is-left">
+                                    <i className="fa fa-lock"></i>
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="field">
+                                <input type="button" value="ForgotPassword" className="button is-success" />
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </section>
                         <form onSubmit={resetPasswordHandler}>
                             <input type="password" value={password} onChange={passwordHandler} placeholder="passwordd" />
                             <input value="submit" type="submit" />
